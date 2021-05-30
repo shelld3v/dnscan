@@ -402,12 +402,12 @@ if __name__ == "__main__":
         global target
         target = subtarget
         out.status("Processing domain {}".format(target))
-        if args.resolver_list:
-            out.status("Using resolvers from {}".format(args.resolver))
-        elif args.resolver:
-            out.status("Using specified resolver {}".format(args.resolver))
+        if args.resolvers_list:
+            out.status("Using resolvers from: {}".format(args.resolvers_list))
+        elif args.resolvers:
+            out.status("Using specified resolvers: {}".format(args.resolvers))
         else:
-            out.status("Using system resolvers {}".format(",".join(resolver.nameservers)))
+            out.status("Using system resolvers: {}".format(",".join(resolver.nameservers)))
         if args.tld and not '%%' in target:
             if "." in target:
                 out.warn("Warning: TLD scanning works best with just the domain root")
